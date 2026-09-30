@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedded signing demo · SignatureAPI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside>
+    <header>
+      <h1>Embedded signing</h1>
+      <p>A SignatureAPI signing ceremony in an <code>&lt;iframe&gt;</code>.</p>
+    </header>
+
+    <section class="needs-server" hidden>
+      <button id="sign-document" class="primary">Sign document</button>
+      <p id="start-error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section>
+      <label for="url-input">Ceremony URL</label>
+      <input id="url-input" type="text" placeholder="https://sign.signatureapi.com/…" autocomplete="off" spellcheck="false" />
+      <button id="go">Load</button>
+    </section>
+
+    <section class="events">
+      <h2>Events</h2>
+      <ol id="events" aria-live="polite"></ol>
+      <p id="no-events" class="hint">Messages the page receives show up here.</p>
+    </section>
+
+    <footer>Powered by <a href="https://signatureapi.com">SignatureAPI</a></footer>
+  </aside>
+
+  <main>
+    <div id="start" class="panel">
+      <div class="document" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <h2>Sign a sample document</h2>
+      <p id="start-hint"></p>
+    </div>
+
+    <iframe id="ceremony" title="SignatureAPI signing ceremony" src="about:blank" hidden></iframe>
+
+    <div id="result" class="panel" hidden>
+      <div id="result-badge" class="badge" aria-hidden="true"></div>
+      <h2 id="result-title" role="status"></h2>
+      <p id="result-message"></p>
+      <div class="actions">
+        <button id="again" class="primary needs-server" hidden>Sign another document</button>
+        <button id="back">Back to start</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

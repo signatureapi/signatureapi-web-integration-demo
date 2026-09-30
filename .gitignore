@@ -1,0 +1,21 @@
+.DS_Store
+
+# node
+node_modules/
+
+# server
+server/.env
+server/dist/
+
+# e2e
+e2e/test-results/
+e2e/playwright-report/
+e2e/blob-report/
+
+# Local notes, never committed
+*.local.md
+
+# Screen recordings: only the ones the docs show are versioned
+*.mp4
+*.webm
+!docs/media/*.mp4

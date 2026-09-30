@@ -2,79 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viewer</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body { display: flex; font-family: system-ui, sans-serif; }
-    aside {
-      width: 30%;
-      flex-shrink: 0;
-      background: #f4f4f5;
-      border-right: 1px solid #d4d4d8;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    aside h1 { font-size: 14px; color: #3f3f46; }
-    aside input {
-      width: 100%;
-      padding: 6px 8px;
-      font-size: 12px;
-      border: 1px solid #d4d4d8;
-      border-radius: 6px;
-    }
-    aside button {
-      padding: 6px 8px;
-      font-size: 12px;
-      border: none;
-      border-radius: 6px;
-      background: #18181b;
-      color: #fff;
-      cursor: pointer;
-    }
-    aside .current {
-      font-size: 11px;
-      color: #71717a;
-      word-break: break-all;
-    }
-    main { flex: 1; }
-    iframe { width: 100%; height: 100%; border: none; display: block; }
-  </style>
+  <title>Embedded signing demo · SignatureAPI</title>
+  <script>
+    // The page lives in web/. Keep links to this address working, ?url= included.
+    location.replace('web/' + location.search);
+  </script>
 </head>
 <body>
-  <aside>
-    <h1>Viewer</h1>
-    <input id="url-input" type="text" placeholder="https://example.com" />
-    <button id="go">Load</button>
-    <div class="current" id="current"></div>
-  </aside>
-  <main>
-    <iframe id="frame" src="about:blank"></iframe>
-  </main>
-  <script>
-    // Take everything after "url=" raw, so unencoded "&" in the target URL survives.
-    const match = location.search.match(/[?&]url=(.*)$/);
-    const initialUrl = match ? decodeURIComponent(match[1]) : null;
-    const frame = document.getElementById('frame');
-    const input = document.getElementById('url-input');
-    const current = document.getElementById('current');
-
-    function load(url) {
-      if (!url) return;
-      if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
-      frame.src = url;
-      current.textContent = url;
-      input.value = url;
-      history.replaceState(null, '', location.pathname + '?url=' + url);
-    }
-
-    document.getElementById('go').addEventListener('click', () => load(input.value.trim()));
-    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') load(input.value.trim()); });
-
-    load(initialUrl);
-  </script>
+  <a href="web/">Embedded signing demo</a>
 </body>
 </html>
