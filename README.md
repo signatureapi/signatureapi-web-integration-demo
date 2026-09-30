@@ -70,7 +70,7 @@ Paste a ceremony URL into **Ceremony URL**, or pass it in the address: `http://l
 
 ## Hosted page
 
-The page alone is published at <https://signatureapi.github.io/ceremony-embed-demo/>. There is no demo server behind it, so **Sign document** is hidden and the page offers only the **Ceremony URL** field. Create the ceremony yourself with `https://signatureapi.github.io` in its `embeddable_in`, and paste its URL. The result screen then shows what the ceremony reported, with nothing confirmed on a server.
+The page alone is published at <https://signatureapi.github.io/signatureapi-web-integration-demo/>. There is no demo server behind it, so **Sign document** is hidden and the page offers only the **Ceremony URL** field. Create the ceremony yourself with `https://signatureapi.github.io` in its `embeddable_in`, and paste its URL. The result screen then shows what the ceremony reported, with nothing confirmed on a server.
 
 Only the page is deployed. The demo server has no authentication: anyone who can reach it can create envelopes with your key and get signing links. It listens on `localhost` only, and it is not meant to be deployed.
 
